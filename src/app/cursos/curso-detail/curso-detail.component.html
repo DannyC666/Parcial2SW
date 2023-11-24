@@ -1,0 +1,16 @@
+
+<div class="card" style="width: 18rem;">
+  <img  src="{{ cursoDetail.image }}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{cursoDetail.title}}</h5>
+    <p class="card-text">{{cursoDetail.description}}</p>
+    
+    <div *ngIf="cursoDetail.offers_certificate">
+      <p  style="color: green;"> EL curso SI ofrece certificado</p>
+    </div>
+    <div *ngIf="!cursoDetail.offers_certificate">
+      <p  style="color: red;"> EL curso NO ofrece certificado</p>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,57 @@
+
+
+<div class="cursos-flex-row-container">
+  <div class="item-80"> 
+    <div class="col mb-2" >
+      <table class="table" >
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Plataforma</th>
+            <th scope="col">Lanzamiento</th>
+            <th scope="col">Duracion (h)</th>
+          </tr>
+        </thead>
+        <tbody >
+          <tr *ngFor="let curso of cursos">
+            <td>
+              <a>{{curso.id}}</a>
+            </td>
+            <td>
+              <a  href="#"  (click)="onSelected(curso)"  >{{curso.title}}</a >
+            </td>
+            <td>
+              <dd>{{curso.platform}}</dd>
+            </td>
+            <td>
+              <dd>{{curso.launch_year}}</dd>
+            </td>
+            <td>
+              <dd>{{curso.duration_hours}}</dd>
+            </td>
+        </tr>
+        </tbody>
+      </table>
+
+      <div class="container-certificated-courses" > 
+        <p> Los cursos que tienen certificado son : </p>
+        <div *ngFor="let curso of cursos">
+
+          <div  *ngIf="curso.offers_certificate">
+            <div >
+              <p>{{ curso.id }}, </p>
+          
+            </div>
+          </div >
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="item-20">  
+    <div *ngIf="selected">
+      <app-curso-detail [cursoDetail]="selectedCurso"></app-curso-detail>
+    </div>
+  </div>
+</div>

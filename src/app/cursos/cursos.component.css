@@ -1,0 +1,19 @@
+.container-certificated-courses{
+
+        display: flex;
+        flex-direction: row; 
+
+}
+
+.cursos-flex-row-container{
+        display: flex;
+        margin: 50px;
+}
+
+.item-80 {
+        flex:70%; 
+    
+      }
+.item-20 {
+        flex: 30%; 
+      }
